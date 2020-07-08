@@ -5,6 +5,9 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
   templateUrl: './event-thumbnail.component.html',
   styles: [
     `
+      .thumbnail {
+        min-height: 210px;
+      }
       .pad-left {
         margin-left: 10px;
       }
@@ -20,4 +23,11 @@ export class EventThumbnailComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+
+  getStartTimeStyle() {
+    if (this.event && this.event.time === '8:00 am') {
+      return {color: '#003300', 'font-weight': 'bold'};
+    }
+    return {};
+  }
 }
